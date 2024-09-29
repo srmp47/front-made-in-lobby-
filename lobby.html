@@ -1,0 +1,774 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Simple Section Navigation</title>  
+    <link rel="stylesheet" href="test.css">  
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Actor&family=Abhaya+Libre:wght@400;700&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Akshar&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nuntio+Sans:wght@300;600&display=swap">  
+    <script>  
+       document.addEventListener("DOMContentLoaded", function() {  
+        // Select all information buttons  
+        const infoButtons = document.querySelectorAll('.member-info button');  
+
+        // Select the details-info section  
+        const detailsInfo = document.querySelector('.details-info');  
+
+        // Add click event listeners to each button  
+        infoButtons.forEach(function(button) {  
+            button.addEventListener('click', function() {  
+                // Hide all member information  
+                const mainAreas = document.querySelectorAll('.main-area');  
+                mainAreas.forEach(area => {  
+                    area.style.display = 'none';  
+                });  
+
+                // Show the details-info section  
+                detailsInfo.style.display = 'block';  
+            });  
+        });  
+    }); 
+    document.addEventListener("DOMContentLoaded", function() {  
+    // Select all header icons within the main-area class  
+    const headers = document.querySelectorAll(".main-area .header");  
+
+    // Loop through each header  
+    headers.forEach(header => {  
+        header.addEventListener("click", function() {  
+            const moreInfoSection = this.nextElementSibling; // Get the corresponding more-inf section  
+            const chevronIcon = this.querySelector("i"); // Locate the icon within the clicked header  
+            
+            // Toggle display for the more-info section  
+            if (moreInfoSection.style.display === "none" || moreInfoSection.style.display === "") {  
+                moreInfoSection.style.display = "block"; // Show the more-info section  
+                chevronIcon.classList.remove("fa-chevron-down"); // Change icon to up  
+                chevronIcon.classList.add("fa-chevron-up");  
+            } else {  
+                moreInfoSection.style.display = "none"; // Hide the more-info section  
+                chevronIcon.classList.remove("fa-chevron-up"); // Change icon back to down  
+                chevronIcon.classList.add("fa-chevron-down");  
+            }  
+        });  
+    });  
+});
+        let currentSlideIndex = 0; // To keep track of the current image  
+        const images = [ // Array of image paths  
+            "image1.jpg",  
+            "image2.jpg",  
+            "image3.jpg"  
+        ];  
+        function showNew() {  
+    const myNew = document.getElementById('new-details');  
+    myNew.style.display = "block";  
+    
+    // Corrected method name here:  
+    const mainPage = document.getElementById('main');  
+    mainPage.style.display = "none";  
+}  
+
+
+        function showSection(sectionId) {  
+            const sections = document.querySelectorAll('.section');  
+            sections.forEach(section => {  
+                section.classList.remove('active');  
+            });  
+        
+            const activeSection = document.getElementById(sectionId);  
+            if (activeSection) {  
+                activeSection.classList.add('active');  
+            }  
+
+            showNavbar('in-' + sectionId);  
+        } 
+        function showNavbar(navbarId){  
+            const navbars = document.querySelectorAll('.navbar');  
+            navbars.forEach(navbar => {  
+                navbar.classList.remove('active');  
+                navbar.style.display = 'none';  
+            });  
+
+            const activeNavbar = document.getElementById(navbarId);  
+            if(activeNavbar){  
+                activeNavbar.classList.add('active');   
+                activeNavbar.style.display = 'block';   
+            }  
+        }  
+        function changeImage(direction) {  
+            const imageElement = document.querySelector('#first-image img');  
+
+            // Update currentSlideIndex based on direction  
+            if (direction === 'right') {  
+                currentSlideIndex = (currentSlideIndex + 1) % images.length; // Move right  
+            } else {  
+                currentSlideIndex = (currentSlideIndex - 1 + images.length) % images.length; // Move left  
+            }  
+
+            // Change the src of the image element  
+            imageElement.src = images[currentSlideIndex];  
+        }  
+        
+        function changeImage(direction) {  
+    const imageElement = document.querySelector('#first-image img');  
+    const circles = document.querySelectorAll('.slider-circle'); // Select all circles  
+
+    // Update currentSlideIndex based on direction  
+    if (direction === 'right') {  
+        currentSlideIndex = (currentSlideIndex + 1) % images.length; // Move right  
+    } else {  
+        currentSlideIndex = (currentSlideIndex - 1 + images.length) % images.length; // Move left  
+    }  
+    // Change the src of the image element  
+    imageElement.src = images[currentSlideIndex];  
+
+    // Remove active class from all circles  
+    circles.forEach(circle => circle.classList.remove('active'));  
+
+    // Add active class to the current circle  
+    circles[currentSlideIndex].classList.add('active');  
+} 
+        function BackToNews(){
+            const myNew = document.getElementById('new-details');  
+            myNew.style.display = "none"; 
+            const mainPage = document.getElementById('main');  
+            mainPage.style.display = "block"; 
+        }
+        function showNew() {  
+    const myNew = document.getElementById('new-details');  
+    myNew.style.display = "block";  
+    
+    // Corrected method name here:  
+    const mainPage = document.getElementById('main');  
+    mainPage.style.display = "none";  
+}  
+
+        window.onload = () => {  
+            showSection('home');  
+            document.querySelector('#first-image img').src = images[currentSlideIndex]; // Set initial image  
+        };  
+        
+    </script>  
+</head>  
+<body>  
+    <nav id="in-home" class="navbar active">  
+        <img src="image 5.png" alt="Logo">  
+        <ul>  
+            <li><a href="#" onclick="showSection('home')" class="Home">Home</a></li>  
+            <li><a href="#" onclick="showSection('ontact-us')"class="Contact-US">Contact US</a></li>  
+            <li><a href="#" onclick="showSection('News')" class="News">News</a></li>  
+            <li><a href="#" onclick="showSection('members')" class="Members">Members</a></li>  
+            <li><a href="#" onclick="showSection('blog')" class="Blog">Blog</a></li>  
+        </ul>  
+    </nav>  
+    <nav id="in-ontact-us" class="navbar active">  
+        <img src="image 5.png" alt="Logo">  
+        <ul>  
+            <li><a href="#" onclick="showSection('home')" class="Home">Home</a></li>  
+            <li><a href="#" onclick="showSection('ontact-us')"class="Contact-US">Contact US</a></li>  
+            <li><a href="#" onclick="showSection('News')" class="News">News</a></li>  
+            <li><a href="#" onclick="showSection('members')" class="Members">Members</a></li>  
+            <li><a href="#" onclick="showSection('blog')" class="Blog">Blog</a></li>  
+        </ul>  
+    </nav> 
+    <nav id="in-News" class="navbar active">  
+        <img src="image 5.png" alt="Logo">  
+        <ul>  
+            <li><a href="#" onclick="showSection('home')" class="Home">Home</a></li>  
+            <li><a href="#" onclick="showSection('ontact-us')"class="Contact-US">Contact US</a></li>  
+            <li><a href="#" onclick="showSection('News')" class="News">News</a></li>  
+            <li><a href="#" onclick="showSection('members')" class="Members">Members</a></li>  
+            <li><a href="#" onclick="showSection('blog')" class="Blog">Blog</a></li>  
+        </ul>  
+    </nav> 
+    <nav id="in-members" class="navbar active">  
+        <img src="image 5.png" alt="Logo">  
+        <ul>  
+            <li><a href="#" onclick="showSection('home')" class="Home">Home</a></li>  
+            <li><a href="#" onclick="showSection('ontact-us')"class="Contact-US">Contact US</a></li>  
+            <li><a href="#" onclick="showSection('News')" class="News">News</a></li>  
+            <li><a href="#" onclick="showSection('members')" class="Members">Members</a></li>  
+            <li><a href="#" onclick="showSection('blog')" class="Blog">Blog</a></li>  
+        </ul>  
+    </nav> 
+    <nav id="in-blog" class="navbar active">  
+        <img src="image 5.png" alt="Logo">  
+        <ul>  
+            <li><a href="#" onclick="showSection('home')" class="Home">Home</a></li>  
+            <li><a href="#" onclick="showSection('ontact-us')"class="Contact-US">Contact US</a></li>  
+            <li><a href="#" onclick="showSection('News')" class="News">News</a></li>  
+            <li><a href="#" onclick="showSection('members')" class="Members">Members</a></li>  
+            <li><a href="#" onclick="showSection('blog')" class="Blog">Blog</a></li>  
+        </ul>  
+    </nav> 
+    <!-- The rest of the nav elements --> 
+     <div id="blog" class="section">
+        <div class="magazine">
+            <div class="magazine-text">
+                <p>podcast or magazine</p>
+            </div>
+            <div class="download-text">
+                <p>Download</p>
+            </div>
+            <div class="explain">
+                <p>Explain about this podcast</p>
+            </div>
+        </div>
+        <div class="magazine">
+            <div class="magazine-text">
+                <p>podcast or magazine</p>
+            </div>
+            <div class="download-text">
+                <p>Download</p>
+            </div>
+            <div class="explain">
+                <p>Explain about this podcast</p>
+            </div>
+        </div>
+        <div class="magazine">
+            <div class="magazine-text">
+                <p>podcast or magazine</p>
+            </div>
+            <div class="download-text">
+                <p>Download</p>
+            </div>
+            <div class="explain">
+                <p>Explain about this podcast</p>
+            </div>
+        </div>
+        <div class="magazine">
+            <div class="magazine-text">
+                <p>podcast or magazine</p>
+            </div>
+            <div class="download-text">
+                <p>Download</p>
+            </div>
+            <div class="explain">
+                <p>Explain about this podcast</p>
+            </div>
+        </div>
+        <div class="magazine">
+            <div class="magazine-text">
+                <p>podcast or magazine</p>
+            </div>
+            <div class="download-text">
+                <p>Download</p>
+            </div>
+            <div class="explain">
+                <p>Explain about this podcast</p>
+            </div>
+        </div>
+     </div> 
+     <div id="members" class="section">  
+        <div class="main-area">  
+            <div class="header">
+            <p>Central members of the academic year 2020/2021</p>  
+            <i class="fas fa-chevron-down"></i>  
+            </div>
+            <div class="more-inf">  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member1</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member2</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member3</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member4</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member5</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member6</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member7</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member8</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member9</p>  
+                </div>  
+            </div>  
+        </div>  
+        <div class="main-area">  
+            <div class="header">
+            <p>Central members of the academic year 2021/2022</p>  
+            <i class="fas fa-chevron-down"></i>  
+            </div>
+            <div class="more-inf">  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member1</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member2</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member3</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member4</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member5</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member6</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member7</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member8</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member9</p>  
+                </div>  
+            </div>  
+        </div>  
+        <div class="main-area">  
+            <div class="header">
+            <p>Central members of the academic year 2022/2023</p>  
+            <i class="fas fa-chevron-down"></i>  
+            </div>
+            <div class="more-inf">  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member1</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member2</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member3</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member4</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member5</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member6</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member7</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member8</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member9</p>  
+                </div>  
+            </div>  
+        </div>  
+        <div class="main-area">  
+            <div class="header">
+            <p>Central members of the academic year 2023/2024</p>  
+            <i class="fas fa-chevron-down"></i>  
+            </div>
+            <div class="more-inf">  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member1</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member2</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member3</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member4</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member5</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member6</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member7</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member8</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member9</p>  
+                </div>  
+            </div>  
+        </div>  
+        <div class="main-area">  
+            <div class="header">
+            <p>Central members of the academic year 2024/2025</p>  
+            <i class="fas fa-chevron-down"></i>  
+            </div>
+            <div class="more-inf">  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member1</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member2</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member3</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member4</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member5</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member6</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member7</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member8</p>  
+                </div>  
+                <div class="member-info">  
+                    <button>information</button>  
+                    <p>member9</p>  
+                </div>  
+            </div>  
+        </div>  
+        <div class="details-info">  
+            <div class="image-circle"></div>  
+            <p class="name">name</p>  
+            <p class="duty">duty</p>  
+            <p class="phone"><i class="fas fa-phone"></i> Phone: +98 9919359410</p>  
+            <p class="email"><i class="fas fa-envelope"></i> Email: srmpoor47@gmail.com</p>  
+        </div>
+    </div>
+    <div id="ontact-us" class="section">  
+        <h1>Contact Us</h1>  
+        <input type="text" id="name" name="name" placeholder="Your Name"><br>  
+        <input type="text" id="email" name="email" placeholder="Your Email"> <br> 
+        <input type="text" id="message" name="message" placeholder="Message"> 
+        <br>
+        <button>Send</button>
+    </div>  
+    <div id="home" class="section active">  
+        <div class="slider" id="first-image">  
+            <img src="image1.jpg" alt="Slider Image">  
+            <i class="fas fa-chevron-left" id="arrow-left" onclick="changeImage('left')"></i>  
+            <i class="fas fa-chevron-right" id="arrow-right" onclick="changeImage('right')"></i>  
+            
+            <div class="slider-circles">  
+                <div class="slider-circle active"></div>  <!-- Image 1 -->  
+                <div class="slider-circle"></div>          <!-- Image 2 -->  
+                <div class="slider-circle"></div>          <!-- Image 3 -->  
+            </div>  
+        </div>   
+        <div class="main-text">
+        <h1>What is the Computer Faculty of Sharif University of Technology?</h1>
+        <p>The Computer Faculty of Sharif University of Technology is a leading academic institution focused on the study and advancement of computer science and engineering. It offers a diverse range of undergraduate and graduate programs designed to equip students with the necessary skills and knowledge to excel in the rapidly evolving tech industry. The faculty emphasizes a blend of theoretical understanding and practical experience, providing students with opportunities to engage in hands-on projects, research initiatives, and collaborations with industry partners. With a commitment to innovation and excellence, the Computer Faculty aims to produce highly skilled professionals who are prepared to tackle complex challenges in the digital world.</p>
+        <h1>History of the Computer Faculty of Sharif University of Technology</h1>
+        <p>The Computer Faculty was established in the early 1980s, during a period of significant growth in the field of computer science in Iran. Initially, it began with a small number of students and faculty members, but it quickly gained recognition for its rigorous academic programs and research contributions. Over the years, the faculty has expanded its curriculum to include various specializations, such as artificial intelligence, software engineering, and data science. The faculty has also fostered numerous collaborations with international institutions and industry leaders, enhancing its reputation as a center of excellence in computer education and research. Today, the Computer Faculty of Sharif University of Technology stands as a beacon of knowledge and innovation, shaping the future of technology in Iran and beyond.</p>
+        </div>
+        <div class="Home-News">
+            <div class="New">
+                <div class="image-place">
+                </div>
+                <h1>title</h1>
+                <p class="news-text">news text</p>
+                <p class="author-name">author:(name)</p>
+                <hr>
+                <p class="read-more">read more...</p>
+            </div>
+            <div class="New">
+                <div class="image-place">
+                </div>
+                <h1>title</h1>
+                <p class="news-text">news text</p>
+                <p class="author-name">author:(name)</p>
+                <hr>
+                <p class="read-more">read more...</p>
+            </div>
+            <div class="New">
+                <div class="image-place">
+                </div>
+                <h1>title</h1>
+                <p class="news-text">news text</p>
+                <p class="author-name">author:(name)</p>
+                <hr>
+                <p class="read-more">read more...</p>
+            </div>
+            <div class="New">
+                <div class="image-place">
+                </div>
+                <h1>title</h1>
+                <p class="news-text">news text</p>
+                <p class="author-name">author:(name)</p>
+                <hr>
+                <p class="read-more">read more...</p>
+            </div>
+            <div class="New">
+                <div class="image-place">
+                </div>
+                <h1>title</h1>
+                <p class="news-text">news text</p>
+                <p class="author-name">author:(name)</p>
+                <hr>
+                <p class="read-more">read more...</p>
+            </div>
+            <div class="New">
+                <div class="image-place">
+                </div>
+                <h1>title</h1>
+                <p class="news-text">news text</p>
+                <p class="author-name">author:(name)</p>
+                <hr>
+                <p class="read-more">read more...</p>
+            </div>
+            
+        </div>
+        <div class="button-container">
+            <button class="more-news" onclick="showSection('News')">
+                <p>more news</p>
+            </button>
+        </div>
+            <div class="magazine">
+                <div class="magazine-text">
+                    <p>podcast or magazine</p>
+                </div>
+                <div class="download-text">
+                    <p>Download</p>
+                </div>
+                <div class="explain">
+                    <p>Explain about this podcast</p>
+                </div>
+            </div>
+            <div class="magazine">
+                <div class="magazine-text">
+                    <p>podcast or magazine</p>
+                </div>
+                <div class="download-text">
+                    <p>Download</p>
+                </div>
+                <div class="explain">
+                    <p>Explain about this podcast</p>
+                </div>
+            </div>
+            <div class="magazine">
+                <div class="magazine-text">
+                    <p>podcast or magazine</p>
+                </div>
+                <div class="download-text">
+                    <p>Download</p>
+                </div>
+                <div class="explain">
+                    <p>Explain about this podcast</p>
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="more-podcast" onclick="showSection('blog')">
+                    <p>more podcasts or magazines</p>
+                </button>
+            </div>
+    </div>
+    <div id="News" class="section">  
+        <nav class="navbar">  
+            <ul>  
+                <li><a href="#home">Home</a></li>  
+                <li><a href="#about">About</a></li>  
+                <li><a href="#contact">Contact</a></li>  
+                <!-- Other nav items can be added here -->  
+            </ul>  
+        </nav>  
+    
+        <!-- Back Button -->  
+        
+    
+        <div id="main">  
+            <h1>news</h1>  
+            <div class="all-news">  
+                <!-- News Items -->  
+                <div class="New">  
+                    <div class="image-place"></div>  
+                    <h1>title</h1>  
+                    <p class="news-text">news text</p>  
+                    <p class="author-name">author:(name)</p>  
+                    <hr>  
+                    <p class="read-more" onclick="showNew()">read more...</p>  
+                </div> 
+                <div class="New">  
+                    <div class="image-place"></div>  
+                    <h1>title</h1>  
+                    <p class="news-text">news text</p>  
+                    <p class="author-name">author:(name)</p>  
+                    <hr>  
+                    <p class="read-more" onclick="showNew()">read more...</p>  
+                </div>
+                <div class="New">  
+                    <div class="image-place"></div>  
+                    <h1>title</h1>  
+                    <p class="news-text">news text</p>  
+                    <p class="author-name">author:(name)</p>  
+                    <hr>  
+                    <p class="read-more" onclick="showNew()">read more...</p>  
+                </div>
+                <div class="New">  
+                    <div class="image-place"></div>  
+                    <h1>title</h1>  
+                    <p class="news-text">news text</p>  
+                    <p class="author-name">author:(name)</p>  
+                    <hr>  
+                    <p class="read-more" onclick="showNew()">read more...</p>  
+                </div>
+                <div class="New">  
+                    <div class="image-place"></div>  
+                    <h1>title</h1>  
+                    <p class="news-text">news text</p>  
+                    <p class="author-name">author:(name)</p>  
+                    <hr>  
+                    <p class="read-more" onclick="showNew()">read more...</p>  
+                </div>
+                <div class="New">  
+                    <div class="image-place"></div>  
+                    <h1>title</h1>  
+                    <p class="news-text">news text</p>  
+                    <p class="author-name">author:(name)</p>  
+                    <hr>  
+                    <p class="read-more" onclick="showNew()">read more...</p>  
+                </div>
+                <div class="New">  
+                    <div class="image-place"></div>  
+                    <h1>title</h1>  
+                    <p class="news-text">news text</p>  
+                    <p class="author-name">author:(name)</p>  
+                    <hr>  
+                    <p class="read-more" onclick="showNew()">read more...</p>  
+                </div>
+                <div class="New">  
+                    <div class="image-place"></div>  
+                    <h1>title</h1>  
+                    <p class="news-text">news text</p>  
+                    <p class="author-name">author:(name)</p>  
+                    <hr>  
+                    <p class="read-more" onclick="showNew()">read more...</p>  
+                </div>
+                <div class="New">  
+                    <div class="image-place"></div>  
+                    <h1>title</h1>  
+                    <p class="news-text">news text</p>  
+                    <p class="author-name">author:(name)</p>  
+                    <hr>  
+                    <p class="read-more" onclick="showNew()">read more...</p>  
+                </div>
+                <div class="New">  
+                    <div class="image-place"></div>  
+                    <h1>title</h1>  
+                    <p class="news-text">news text</p>  
+                    <p class="author-name">author:(name)</p>  
+                    <hr>  
+                    <p class="read-more" onclick="showNew()">read more...</p>  
+                </div>
+                <div class="New">  
+                    <div class="image-place"></div>  
+                    <h1>title</h1>  
+                    <p class="news-text">news text</p>  
+                    <p class="author-name">author:(name)</p>  
+                    <hr>  
+                    <p class="read-more" onclick="showNew()">read more...</p>  
+                </div>
+                <div class="New">  
+                    <div class="image-place"></div>  
+                    <h1>title</h1>  
+                    <p class="news-text">news text</p>  
+                    <p class="author-name">author:(name)</p>  
+                    <hr>  
+                    <p class="read-more" onclick="showNew()">read more...</p>  
+                </div>
+                <!-- Repeat news items as necessary -->  
+            </div>  
+        </div>  
+    
+        <div id="new-details">  
+            <button class="back-button" onclick="BackToNews()">  
+                <i class="fas fa-chevron-left"></i>  
+            </button>  
+            <div class="image-place"></div>  
+            <h1>this is an area to write title</h1>  
+            <p class="first">this is an area to write main text</p>  
+            <p class="second">this is an area to write author</p>  
+        </div>  
+    </div>
+
+    <footer>  
+        <p id="first-text">UPSKILL FOR A BETTER FUTURE</p>  
+        <h1>Request More Information</h1>  
+        <p id="second_text">Lift Media, LLC is a clinical stage healthcare company<br> which is developing a unique.</p>  
+        <button onclick="showSection('ontact-us')">  
+            Contact Us  
+        </button>  
+        <p id="third_text">© 2019 Lift Media, LLC</p>  
+        <hr>
+        <div class="row">
+            <div class="text">TEAM</div>
+            <div class="text">CASE STUDIES</div>
+            <div class="text">PUBLICATIONS</div>
+        </div>
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i> 
+            <i class="fab fa-linkedin"></i> 
+        </div>
+        <img src="Logo.png" alt="Lift" class="Lift-picture">
+    </footer>  
+</body>  
+</html>
