@@ -1,0 +1,651 @@
+.section {  
+    display: none; /* Hide all sections by default */  
+}  
+
+.section.active {  
+    display: block; /* Show only the active section */  
+}  
+
+.navbar {  
+    display: none; /* Hide all navbars by default */  
+}  
+
+.navbar.active {  
+    display: block; /* Show only the active navbar */  
+}
+
+/* You can add more styles as needed */
+body {  
+    font-family: Arial, sans-serif;  
+    margin: 0;  
+    padding: 0;  
+}  
+.section {  
+    display: none; /* Hide all sections by default */  
+}  
+
+.section.active {  
+    display: block; /* Show only the active section */  
+}  
+
+nav {  
+    background-color: black;  
+    color: white;  
+    padding: 15px;  
+    width: 100%;
+    height: auto;
+}  
+
+nav ul {  
+    list-style-type: none;  
+    margin: 0;  
+    padding: 0;  
+    display: flex;               /* Use flexbox layout */  
+    justify-content: center; 
+    gap: 40px;    /* Center items horizontally */  
+}  
+nav img {  
+    display: block;      /* Ensures the image is treated as a block element */  
+    margin-left: 70px;  /* Now moves the image 70px to the left */  
+    margin-bottom: -30px; /* Existing margin below the image */  
+}  
+
+nav ul li {  
+    display: inline;  
+    margin-right: 20px;  
+}  
+
+nav ul li a {  
+    color: white;  
+    text-decoration: none;  
+    font-family: 'Outfit',sans-serif;
+}  
+nav ul img {
+    margin-right: 100px;
+}
+footer {  
+    width: 100%;                     /* Set full width for the footer */  
+    height: 626px;                   /* Allow height to be determined by content */  
+    background-color: black;  
+    color: white;  
+    display: flex;                  /* Enables flexbox */  
+    flex-direction: column;         /* Flows items vertically */  
+    justify-content: center;        /* Centers items vertically */  
+    align-items: center;            /* Centers items horizontally */  
+    text-align: center;             /* Centers text */  
+    padding: 20px;                  /* Optional padding for spacing around the content */  
+}  
+footer *{
+    text-align: center;
+}
+#first_text, #second_text, #third_text {  
+    margin: 0;                     /* Remove default margins */  
+} 
+footer h1 {
+   padding-top: 40px;
+   font-family: 'Abhaya Libre',sans-serif;
+}
+footer #first-text {
+    font-family: 'Aboreto',cursive;
+    letter-spacing: 2.5px;
+}
+#second_text {
+    line-height: 30px;
+    font-family: 'Aboreto', sans-serif;
+    font-weight: 1;
+}
+footer button {  
+    background-color: white;  
+    font-family: 'Actor', sans-serif;  
+    border: none;  
+    border-radius: 30px;  
+    font-size: 16px;  
+    width: 197.4px;  
+    height: 54.59px;  
+    margin-top: 10px;   
+    cursor: pointer;  
+}  
+#third_text {
+    font-family: 'Aboreto',sans-serif;
+    margin-top: 40px;
+}
+footer hr {  
+    width: 80%;  
+    border: 0.1px solid darkgray;  
+    margin-top: 20px;              /* Optional margin for spacing above the hr */  
+}  
+
+.row {  
+    display: flex;  
+    justify-content: space-around; /* Adjusts spacing between items */  
+    align-items: center; /* Vertically centers the items */  
+    margin: 35px; /* Optional margin for spacing */  
+}  
+
+.text {  
+    padding: 10px;  
+    font-family: 'Aboreto',sans-serif;
+    font-size: 16px;
+}
+
+.social-icons {  
+    display: flex; /* Use flexbox to lay out items in a row */  
+    justify-content: center; /* Center the icons horizontally */  
+    gap: 15px; /* Change this value to adjust the space between icons */ 
+    margin-top: -76px;
+    margin-left: 76%;
+
+} 
+.social-icons i {  
+    font-size: 24px; /* Adjust size of the icons */  
+    transition: color 0.3s; /* Optional: add transition for hover effect */  
+    /* width: 13.5px;
+    height: 12.28px; */
+    border: 3px solid #757a76;
+    border-radius: 30px;
+    padding: 10px;
+} 
+
+.section {  
+    display: none; /* Hide all sections by default */  
+    padding: 20px;  
+}  
+
+.section.active {  
+    display: block; /* Show the active section */  
+}
+
+.Lift-picture {
+    margin-top: -15px;
+    margin-right: 80%;
+    width: 83.6px;
+    height: 49.91px;
+}
+#in-home .Home {
+    border-bottom: 3px solid  white;
+    padding: 7px;
+}
+#in-ontact-us .Contact-US{
+    border-bottom: 3px solid  white;
+    padding: 7px;
+}
+#in-News .News{
+    border-bottom: 3px solid  white;
+    padding: 7px;
+}
+#in-members .Members{
+    border-bottom: 3px solid  white;
+    padding: 7px;
+}
+#in-blog .Blog{
+    border-bottom: 3px solid  white;
+    padding: 7px;
+}
+.slider {
+    width: 100%;
+    height: 521px;
+    background-color: #757a76;
+    display: flex;
+    position: relative;
+    align-items: center; /* Center vertically */  
+    justify-content: center; 
+    overflow: hidden;
+}
+.slider img {
+    width: 1045px;
+    height: 450px;
+    border-radius: 191px;
+    box-shadow: 0px 4px 8.8px 7px rgba(0, 0, 0, 0.25); /* X Y Blur Spread Color */ 
+    margin-top: -70px;
+    display: block;
+    margin-left: 100px;
+    max-width: 100%;
+}
+body, html {  
+    margin: 0;  
+    padding: 0;  
+}  
+
+.navbar, .footer {  
+    padding: 10px; /* Adjust as necessary */  
+    margin: 0 auto; /* Center and prevent overflow */  
+}  
+.slider-circles {  
+    display: flex;  
+    /* justify-content: space-around; /* Adjusts spacing between items */   
+    align-items: center; /* Vertically centers the items */  
+    transform: translateX(-430%);
+    margin-top: 460px;
+    justify-content: center;
+    gap: 10px;
+}  
+.slider-circle {
+    border-radius: 50%;
+    width: 39px;
+    height: 38px;
+    background-color: rgb(0, 0, 0, 0.2);
+    display: inline;
+}
+.slider .slider-circles .active{
+    background-color: black;
+}
+.slider i {
+    color:white;
+}
+#arrow-left,  
+#arrow-right {  
+    position: absolute; /* Position arrows absolutely within .slider */  
+    top: 50%; /* Center vertically */  
+    transform: translateY(-50%); /* Adjust for exact vertical center */  
+    font-size: 2em; /* Adjust icon size as needed */  
+    color: white; /* Icon color, adjust as needed */  
+    cursor: pointer; /* Show pointer on hover */  
+    z-index: 1000; /* Ensure arrows are above other elements */  
+}  
+
+#arrow-left {  
+    left: 10px; /* Position on the left side */  
+}  
+
+#arrow-right {  
+    right: 10px; /* Position on the right side */  
+}  
+.main-text h1, .New h1{
+    font-family: 'Abhaya Libre ExtraBold',serif;
+    font-size: 64px;
+}
+.main-text p,.New .news-text{
+    font-family: 'Abhaya Libre',serif;
+    font-size: 20px;
+}
+.Home-News {
+    display: flex;  
+    flex-wrap: wrap; /* Allows wrapping of items to the next line */  
+    justify-content: flex-start;
+}
+.New {
+    width: 455px;
+    height: 641px;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0 0 4px 5px rgba(94, 94, 94, 0.25);
+    margin: 16px;
+}
+.New .image-place {
+    width: 100%;
+    height: 333px;
+    background-color: #bfbdbb;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.New .author-name {
+    font-family: 'Akshar',sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.New .read-more {
+    font-family: 'Abhaya Libre',serif;
+    color: rgb(0, 41, 255);
+    text-align: center;
+    font-size: 40px;
+    margin-top: -8px;
+    cursor: pointer;
+}
+
+.New .news-text,.New h1 {
+    text-align: center;
+}
+.button-container {
+    display: flex;  
+    justify-content: center; /* Center horizontally */  
+    align-items: center;
+    margin-bottom: 40px;
+    height: auto;
+    margin-top: 50px;
+}
+.button-container .more-news {  
+    width: auto;  
+    height: auto;  
+    background-color: rgb(86, 86, 87);  
+    border-radius: 120px;  
+    border: none;  
+    text-align: center;  
+    cursor: pointer;  
+    padding: 20px; /* Add padding for better spacing */  
+    display: flex;  
+    align-items: center; /* Center vertically */  
+    justify-content: center; /* Center horizontally */  
+    transition: transform 300ms ease-out 300ms;
+}  
+
+.button-container .more-news:hover {  
+    transform: translate(0px, 0px) scale(1.6, 1.6);
+}  
+
+.more-news p {  
+    color: white;  
+    font-size: 64px;  
+    font-family: 'Abhaya Libre ExtraBold', serif;  
+    margin: 0; /* Remove margin to prevent shifting */  
+}
+
+/* Ensure the text is centered and has a dynamic position */  
+.button-container .more-news {  
+    display: flex;  
+    align-items: center; /* Center vertically */  
+    justify-content: center; /* Center horizontally */  
+}  
+.magazine {
+    width: 1319px;
+    height: 403px;
+    background-color: white;
+    border-radius: 41px;
+    position: relative;
+    margin: 70px;
+    box-shadow: 0 0 31.1px -2px rgb(0,0,0,0.5);
+}
+.magazine .magazine-text {
+    width: 800px;
+    height: 170px;
+    background-color: rgb(220, 220, 220);
+    border-top-left-radius: 41px;
+    border-bottom-right-radius: 41px;
+}
+.magazine .magazine-text p {
+    text-align: center;
+    padding-top: -50px;
+    padding-left: 90px;
+    font-family: 'Abhaya Libre ExtraBold',serif;
+    font-size: 64px;
+}
+.magazine .download-text {
+    width: 400px;
+    height: 170px;
+    position: absolute; /* Allows for absolute positioning relative to the main-div */  
+    top: 0px; /* Position 20px from the top */  
+    right: 0px;
+    background-color: rgb(220,220,220);
+    border-top-right-radius: 41px;
+    border-bottom-left-radius: 41px;
+}
+.magazine .download-text p {
+    font-family: 'Abhaya Libre ExtraBold',serif;
+    font-size: 48px;
+    text-decoration: underline 4px;
+    text-underline-offset: 19px;
+    color: rgb(0, 10, 255);
+    text-align: center;
+    cursor: pointer;
+    padding-top: 0px;
+    padding-left: 100px;
+
+}
+.magazine .explain {
+    width: 100%;
+    height: 170px;
+    position: absolute;
+    bottom: 0px;
+    background-color: rgb(220,220,220);   
+    border-radius: 41px;
+}
+.magazine p {
+    font-family:'Abhaya Libre ExtraBold',serif;
+    font-size: 32px;
+    position: absolute;
+}
+.button-container .more-podcast {
+    width: auto;
+    background-color: rgb(86, 86, 87);
+    border-radius:120px ;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    height: auto;
+    transition: transform 300ms ease-out 300ms;
+}
+.button-container .more-podcast:hover {
+    transform: translate(0px, 0px) scale(1.5, 1.5);
+}
+.button-container .more-podcast p {
+    text-align: center;
+    color: white;
+    font-size: 64px;
+    font-family: 'Abhaya Libre ExtraBold',serif;
+    margin-top: 36px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.all-news {  
+    display: grid;                                 /* Enable CSS Grid layout */  
+    grid-template-columns: repeat(3, 1fr);       /* Create 3 equal columns */  
+    gap: 10px; 
+    margin-top: 50px;
+    text-align: center;
+    font-family:'Abhaya Libre ExtraBold',serif;
+}  
+#News h1{
+    text-align: center;
+    font-family:'Abhaya Libre ExtraBold',serif;
+    font-size: 64px;
+}
+#new-details {
+    display: none;
+}
+#new-details .image-place {
+    width: 1145px;
+    height: 590px;
+    background-color: gray;
+    margin-left: 144px;
+}
+#new-details p{
+    padding-left: 144px;
+}
+#new-details .first{
+    font-family: 'Abhaya Libre',serif;
+    font-size: 20px; 
+}
+#new-details .second{
+    font-family: 'Akshar',sans-serif;
+    font-size: 20px;
+}
+#new-details h1 {
+    padding-left: 144px;
+    font-family:'Abhaya Libre ExtraBold',serif;
+    font-size: 64px;
+    text-align: left;
+}
+.back-button {
+    background-color: rgb(63,63,63);
+    width: 50px;
+    height: 50px;
+    display: flex;                  /* Enables flexbox */  
+    /* flex-direction: column;         /* Flows items vertically */   
+    justify-content: center;        /* Centers items vertically */  
+    align-items: center;  
+    border: none;
+    border-bottom-right-radius: 30px;
+    position: absolute;   /* Position relative to nearest positioned ancestor */  
+    top: 43px;           /* Adjust as necessary depending on navbar height */  
+    left: 0px; 
+    cursor: pointer;
+}
+.back-button i {
+    color: rgb(0, 148, 255);
+    font-size: 2em;
+    text-align: center;
+}
+#ontact-us{
+    /* flex-direction: column;         /* Flows items vertically */   
+    justify-content: center;        /* Centers items vertically */  
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(113, 114, 115), rgba(214, 216, 217));
+}
+#ontact-us h1{
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 45px;
+}
+#ontact-us #name,#email{
+    background-color: rgb(0, 0, 0,0);
+    border: 2px solid white;
+    width: 477px;
+    height: 47px;
+    margin-bottom: 25px;
+}
+#ontact-us #message {
+    background-color: rgb(0, 0, 0,0);
+    border: 2px solid white;
+    width: 477px;
+    height:219.77px;
+    margin-bottom: 25px;
+    vertical-align: top; /* Align text to the top */  
+    text-align: left;
+    line-height: normal;
+    padding-top: 5px;       /* Add padding only at the top */  
+    padding-left: 5px;      /* Optionally add some left padding */  
+    padding-right: 5px;     /* Optional, adjust as needed */  
+    padding-bottom: 5px; 
+    box-sizing: border-box;  /* Include padding in width and height */  
+    resize: none;   
+}
+#ontact-us #message::placeholder {
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: 4px;
+    padding-left: 4px;
+    color: white;
+}
+#ontact-us ::placeholder{
+    color: white;
+    font-weight: bold;
+}
+#members .main-area {  
+    background-color: rgb(62, 62, 62);  
+    border-radius: 11px;  
+    width: 915px;  
+    height: auto;  
+    margin-left: auto; /* Center horizontally */  
+    margin-right: auto; /* Center horizontally */  
+}  
+
+#members .main-area p {  
+    color: white;  
+    padding: 6px;  
+    font-family: 'Abhaya Libre', sans-serif;  
+    font-size: 20px;  
+    text-align: center;  
+}  
+
+#members .header {  
+    display: flex; /* Use flexbox for layout */  
+    align-items: center; /* Center items vertically */  
+    justify-content: center; /* Center items horizontally */  
+    margin: 10px 0; /* Space above and below header */  
+    padding: 20px;
+}  
+
+#members .header p {  
+    color: white; /* Keep color for text */  
+    padding: 6px;  
+    font-family: 'Abhaya Libre', sans-serif;  
+    font-size: 20px;  
+    margin: 0; /* Remove default margin */  
+    margin-right: 10px; /* Space between text and icon */  
+}  
+
+#members .header i {  
+    color: black; /* Icon color */  
+    font-size: 20px; /* Adjust size as needed */  
+    cursor:pointer;
+}  
+
+/* The rest of your CSS */  
+#members .main-area .more-inf {  
+    padding-left: 150px; /* Add left padding */  
+    padding-right: 150px; /* Add right padding */  
+    display: none;
+}  
+
+#members .main-area .member-info {  
+    display: flex;  
+    align-items: center;  
+    margin-bottom: 10px;  
+}  
+
+#members .main-area button {  
+    border: none;  
+    background-color: rgb(181, 181, 181);  
+    box-shadow: 0px 0px 9px 4px rgba(0, 0, 0, 0.25);   
+    width: 123px;  
+    height: 46px;  
+    border-radius: 7px;  
+    font-family: 'Abhaya Libre', sans-serif;  
+    font-size: 20px;  
+    cursor: pointer;
+    margin-right: 15px;  
+}  
+
+#members .main-area .member-info p {  
+    padding-left: 360px;  
+}
+#members .details-info {  
+    /* Make sure to use flexbox for centering */  
+    padding-left: 600px;
+    flex-direction: column; /* Stack elements vertically */  
+    align-items: center; /* Center elements horizontally */  
+    width: 100%;  
+    height: 100%  ;
+    background: linear-gradient(to bottom, rgba(193, 221, 221), rgba(0, 102, 102));  
+    text-align: center;  
+    padding: 20px; /* Optional padding for spacing */  
+    display: none;
+}  
+
+#members .details-info .image-circle {  
+    border-radius: 50%;  
+    width: 404px;  
+    height: 404px;  
+    background-color: white;  
+    box-shadow: 0px 4px 1px 1px rgba(0, 0, 0, 0.25);  
+    margin: 20px auto; /* Center the image-circle horizontally */  
+}  
+
+#members .details-info .name {  
+    font-size: 32px;  
+    font-family: 'Nuntio Sans', sans-serif;  
+    font-weight: 600;  
+    margin: 10px 0; /* Space around the name */  
+}  
+
+#members .details-info .duty {  
+    font-family: 'Nuntio Sans', sans-serif;  
+    font-size: 32px;  
+    font-weight: 400; /* Set light font weight (change from 1 to 400) */  
+    margin: 10px 0; /* Space around the duty text */  
+}  
+
+#members .details-info .phone,  
+#members .details-info .email {  
+    font-size: 32px;  
+    font-family: 'Nuntio Sans', sans-serif;  
+    margin: 10px 0; /* Space around the phone and email text */  
+}  
+
+.details-info .phone i,  
+.details-info .email i {  
+    margin-right: 8px; /* Space between the icon and the text */  
+    font-size: 32px; /* Adjust icon size if needed */  
+}
+#ontact-us button{
+    border: 2px solid white;
+    background-color: rgb(35,38,47);
+    color: white;
+    width: 112px;
+    height: 60.19px;
+    margin-top: 18px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
